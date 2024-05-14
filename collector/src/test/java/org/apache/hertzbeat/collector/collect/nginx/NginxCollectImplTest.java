@@ -19,6 +19,7 @@ package org.apache.hertzbeat.collector.collect.nginx;
 
 import static org.apache.hertzbeat.common.constants.CommonConstants.TYPE_STRING;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -70,6 +71,12 @@ public class NginxCollectImplTest {
     public void setup() {
     }
 
+    @Test
+    public void testPreCheck() {
+        Metrics metrics = new Metrics();
+        metrics.setName("nginx_status");
+        assertThrows(IllegalArgumentException.class, () -> nginxCollect.preCheck(metrics));
+    }
 
     @Test
     public void testNginxCollectFail() throws IOException {
