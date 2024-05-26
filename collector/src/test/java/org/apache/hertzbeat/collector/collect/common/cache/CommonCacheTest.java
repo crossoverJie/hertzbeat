@@ -19,6 +19,7 @@ package org.apache.hertzbeat.collector.collect.common.cache;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import java.util.Map;
 import org.junit.jupiter.api.Test;
 
 /**

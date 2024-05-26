@@ -319,6 +319,26 @@
                 <plugins>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-checkstyle-plugin</artifactId>
+                        <version>3.3.0</version>
+                        <executions>
+                            <execution>
+                                <id>check-style</id>
+                                <phase>verify</phase>
+                                <configuration>
+                                    <configLocation>.././script/checkstyle/checkstyle.xml</configLocation>
+                                    <suppressionsLocation>.././script/checkstyle/suppressions.xml</suppressionsLocation>
+                                    <encoding>UTF-8</encoding>
+                                    <excludes>**/proto/*</excludes>
+                                </configuration>
+                                <goals>
+                                    <goal>check</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-compiler-plugin</artifactId>
                         <configuration>
                             <source>17</source>
