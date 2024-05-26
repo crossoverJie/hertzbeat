@@ -47,10 +47,10 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 17
-    - name: Check source code style
-      run: mvn -B -T 8 -ntp initialize checkstyle:check
     - name: Build with Maven
       run: mvn clean -B package -Prelease --file pom.xml
+    - name: Check source code style
+      run: mvn -B -T 8 -ntp initialize checkstyle:check
     - name: Upload coverage reports to Codecov
       uses: codecov/codecov-action@v4.0.1
       with:
