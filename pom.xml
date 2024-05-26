@@ -445,7 +445,6 @@
                 <version>3.3.0</version>
                 <configuration>
                     <configLocation>./script/checkstyle/checkstyle.xml</configLocation>
-                    <suppressionsLocation>./script/checkstyle/suppressions.xml</suppressionsLocation>
                     <consoleOutput>true</consoleOutput>
                     <failsOnError>true</failsOnError>
                     <linkXRef>false</linkXRef>
